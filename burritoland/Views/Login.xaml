@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="burritoland.Views.Login" BackgroundImage="bg.png">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HeightRequest="480" WidthRequest="640" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout BackgroundColor="#FBFAE1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="410" WidthRequest="640">
+                    <Image Source="logo.png" Margin="20, 20, 20, 10" />
+                    <Entry Text="{Binding user.email, Mode=TwoWay}" BackgroundColor="#ECEFD8" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="60" WidthRequest="640" Margin="25, 10" Placeholder="Email"></Entry>
+                    <Entry Text="{Binding user.password, Mode=TwoWay}" BackgroundColor="#ECEFD8" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="60" WidthRequest="640" Margin="25, 10" Placeholder="Password"></Entry>
+                    <Label IsVisible="{Binding incorrectPasswordStatus}" Text="Incorrect password" FontSize="20" FontAttributes="Bold" TextColor="#80FF6464" HorizontalOptions="CenterAndExpand" Margin="20, 0" VerticalOptions="Start"></Label>
+                </StackLayout>
+                
+                <StackLayout BackgroundColor="#F7F39A" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="70" WidthRequest="640" x:Name="AccederBTN">
+                    <Button x:Name="loginBtn" Text="Login" FontSize="35" FontAttributes="Bold" TextColor="#64212125" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Button>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

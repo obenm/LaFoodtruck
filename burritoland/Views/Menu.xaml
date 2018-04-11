@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="burritoland.Views.Menu">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#fcfcfc">
+            <Image Source="header.png" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Aspect="AspectFit"></Image>
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="· MENU ·" FontFamily="ChunkFive.ttf#ChunkFive" Font="ChunkFive-Roman" TextColor="#f4a944" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Margin="20, 20, 20, 10"></Label>
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="75*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" VerticalOptions="StartAndExpand" HorizontalOptions="Center" Source="burritos.png"></Image>
+                        <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label Text="BURRITOS" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#e84653" FontSize="30" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="0"></Label>
+                            <Label Text="A burrito is a dish in Mexican and Tex-Mex cuisine that consists of a flour tortilla with various other ingredients." TextColor="#379364" FontSize="13" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="0"></Label>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout>
+                    <ListView ItemsSource="{Binding burritosList, Mode=OneWay}" IsRefreshing="false" IsPullToRefreshEnabled="false" RefreshAllowed="false" HasUnevenRows="true" BackgroundColor="Transparent" SeparatorVisibility="None" Margin="0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid Padding="10" RowSpacing="0" ColumnSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="65"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75*"></ColumnDefinition>
+                                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Label Text="{Binding name}" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#e84653" FontSize="25" VerticalTextAlignment="End" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="0"></Label>
+                                                <Label Text="{Binding description}" TextColor="#379364" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="0"></Label>
+                                            </StackLayout>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding price, StringFormat='{0:C2}'}" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#379364" FontSize="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0"></Label>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    </StackLayout>
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="75*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" VerticalOptions="StartAndExpand" HorizontalOptions="Center" Source="tacos.png"></Image>
+                        <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label Text="TACOS" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#e84653" FontSize="30" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="0"></Label>
+                            <Label Text="A taco is a traditional Mexican dish consisting of a corn or wheat tortilla folded or rolled around a filling." TextColor="#379364" FontSize="13" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="0"></Label>
+                        </StackLayout>
+                    </Grid>
+                    <ListView ItemsSource="{Binding tacosList, Mode=OneWay}" IsRefreshing="false" IsPullToRefreshEnabled="false" RefreshAllowed="false" HasUnevenRows="true" BackgroundColor="Transparent" SeparatorVisibility="None" Margin="0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid Padding="10" RowSpacing="0" ColumnSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="60"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="75*"></ColumnDefinition>
+                                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Label Text="{Binding name}" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#e84653" FontSize="25" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="0"></Label>
+                                                <Label Text="{Binding description}" TextColor="#379364" FontSize="12" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="0"></Label>
+                                            </StackLayout>
+                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding price, StringFormat='{0:C2}'}" FontFamily="Quicksand_Light.ttf#Quicksand" Font="Quicksand" TextColor="#379364" FontSize="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0"></Label>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
